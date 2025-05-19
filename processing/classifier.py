@@ -1,8 +1,6 @@
 import shutil, os, json, numpy as np, time
 from pathlib import Path
 import keras
-from backend.processing.preprocessor import preprocess_audio
-from backend.processing.triangulation import TDOA
 
 # -------------------------------- Constants --------------------------------
 MODEL_PATH = "WhisperNet_model.h5"

@@ -1,1 +1,0 @@
-#TODO: incorporate sensor data to calculate speed of sound and pass it into config.json
