@@ -4,7 +4,7 @@ from pathlib import Path
 import time
 
 
-CONFIG_PATH = Path("../config.json")
+CONFIG_PATH = Path(__file__).parent.parent / "config.json"
 TIMESTAMP_DIR = Path("timestamps")
 
 with open(CONFIG_PATH) as f:

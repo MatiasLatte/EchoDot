@@ -5,7 +5,7 @@ import keras
 from processing.preprocessor import preprocess_audio
 
 # -------------------------------- Constants --------------------------------
-MODEL_PATH = "WhisperNet_model.h5"
+MODEL_PATH = Path(__file__).parent / "WhisperNet_model.h5"
 model = keras.models.load_model(MODEL_PATH)
 DETECT_DIR = Path("detections")
 DETECT_DIR.mkdir(exist_ok=True, parents=True)

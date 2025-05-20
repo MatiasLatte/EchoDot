@@ -17,16 +17,25 @@ def capture_and_log(hydro_id: str) -> bool:
     return classify_and_handle(filepath=filepath, hydro_id=hydro_id, timestamp=timestamp)
 
 
+
 def record_audio(filename: str) -> None:
     Path("buffer").mkdir(exist_ok=True)
     open(f"buffer/{filename}", "wb").close()  # Mock recording
 
 
+from pathlib import Path
+
+
 def record_audio_test(filename: str) -> None:
     Path("buffer").mkdir(exist_ok=True)
-    sample_files = list(Path("test_audio").glob("*.wav"))
+
+    # Make sure to reference the correct absolute path to test_audio/
+    test_audio_path = Path(__file__).parent / "test_audio"
+    sample_files = list(test_audio_path.glob("*.wav"))
+
     if not sample_files:
-        raise FileNotFoundError("No .wav files found in 'test_audio/'. Add test samples.")
+        raise FileNotFoundError(f"No .wav files found in {test_audio_path}")
+
     selected = random.choice(sample_files)
     shutil.copy(selected, f"buffer/{filename}")
     print(f"[Mock Record] Using test audio: {selected.name}")
