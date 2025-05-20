@@ -1,0 +1,7 @@
+{
+  "sound_speed": 1480,
+  "velocity_window": 5,
+  "hydrophones": [
+    { "id": "H1", "pos": { "x": 4.00, "y": 57.00, "z": 103.00 } }
+  ]
+}

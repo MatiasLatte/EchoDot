@@ -2,6 +2,8 @@ import shutil, os, json, numpy as np, time
 from pathlib import Path
 import keras
 
+from processing.preprocessor import preprocess_audio
+
 # -------------------------------- Constants --------------------------------
 MODEL_PATH = "WhisperNet_model.h5"
 model = keras.models.load_model(MODEL_PATH)
