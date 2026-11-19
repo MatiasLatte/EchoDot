@@ -29,8 +29,7 @@ from pathlib import Path
 def record_audio_test(filename: str) -> None:
     Path("buffer").mkdir(exist_ok=True)
 
-    # Make sure to reference the correct absolute path to test_audio/
-    test_audio_path = Path(__file__).parent / "test_audio"
+    test_audio_path = Path(__file__).parent / "buffer"
     sample_files = list(test_audio_path.glob("*.wav"))
 
     if not sample_files:

@@ -1,7 +1,9 @@
 # EchoDot
 
-EchoDot listens through an underwater microphone and flags sounds that resemble a boat motor. Plug the hydrophone into your computer, lower it into the water, and start the lake listener. Every four seconds it shows **possible boat** or **background**. It also works on saved recordings.
+I’m Matias Latte. I built EchoDot to listen for boats through an underwater microphone. There are two ways to try it.
 
-The prototype learned from ship sounds and ocean background noise. Its range on a lake is still unknown. A quiet boat can pass unheard, and a pump can sound like a motor. To find the range at your lake, note when a boat passes, how far away it is, and whether EchoDot hears it. Also listen when the water is empty to count false alarms.
+**1. WhisperNet · my original model.** I trained WhisperNet to recognize propeller sounds. The original demo runs on the sample recordings included here. [Try WhisperNet](processing/README.md)
 
-[Start the lake listener](lake/README.md)
+**2. Lake listener · based on Google’s YAMNet.** Google trained the sound model. This version adds a classifier trained on ship and ocean recordings to flag possible boats. It can listen to a connected hydrophone or check a saved recording. [Try the lake listener](lake/README.md)
+
+The listening range on a lake is still unknown. Measuring it takes boat passes at known distances and quiet periods to count false alarms.
